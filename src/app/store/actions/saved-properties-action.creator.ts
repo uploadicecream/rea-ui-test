@@ -8,3 +8,10 @@ export function savePropertyAction(property: IProperty): IAction {
     payload: property
   };
 }
+
+export function removeSavedPropertyAction(propertyId: number): IAction {
+  return {
+    type: SAVED_PROPERTIES_ACTIONS.REMOVE,
+    payload: propertyId
+  };
+}
