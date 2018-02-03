@@ -29,4 +29,18 @@ describe('Saved Property Reducer', () => {
     expect(result[0].id).toBe(propertyToSave.id);
   });
 
+  it('should not save property with the same id twice', () => {
+    const existingProperty = <IProperty>{ id: 1 };
+    const initialState = [existingProperty];
+    const propertyToSave = <IProperty>{ id: 1 };
+    const action = savePropertyAction(propertyToSave);
+
+    const result = savedPropertyReducer(initialState, action);
+
+    expect(result).toBe(initialState);
+    expect(result.length).toBe(1);
+    expect(result[0]).toBe(existingProperty);
+    expect(result[0].id).toBe(existingProperty.id);
+  });
+
 });
