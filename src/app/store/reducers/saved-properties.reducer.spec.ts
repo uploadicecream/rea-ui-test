@@ -1,9 +1,7 @@
-import {async, TestBed} from '@angular/core/testing';
-import {AppComponent} from '../../app.component';
 import {savedPropertyReducer} from './saved-properties.reducer';
 import {IAction} from '../../interfaces/action.interface';
 import {IProperty} from '../../interfaces/property.interface';
-import {removeSavedPropertyAction, savePropertyAction} from '../actions/saved-properties-action.creator';
+import {loadSavedPropertiesAction, removeSavedPropertyAction, savePropertyAction} from '../actions/saved-properties-action.creator';
 
 describe('Saved Property Reducer', () => {
 
@@ -76,6 +74,16 @@ describe('Saved Property Reducer', () => {
 
     expect(result).toBe(initialState);
     expect(result.length).toBe(1);
+  });
+
+  it('should load saved properties', () => {
+    const initialState = [];
+    const properties = [{id: 1}, {id: 2}];
+    const action = loadSavedPropertiesAction(properties);
+
+    const result = savedPropertyReducer(initialState, action);
+
+    expect(result).toBe(properties);
   });
 
 });

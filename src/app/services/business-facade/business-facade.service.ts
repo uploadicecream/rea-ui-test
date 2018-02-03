@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import {IProperty} from '../../interfaces/property.interface';
 import {Store} from '@ngrx/store';
-import {IAppState, selectSavedProperties} from '../../interfaces/app-state.interface';
+import {IAppState, selectResultProperties, selectSavedProperties} from '../../interfaces/app-state.interface';
 import {removeSavedPropertyAction, savePropertyAction} from '../../store/actions/saved-properties-action.creator';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class BusinessFacadeService {
 
+  resultProperties: Observable<IProperty[]>;
   savedProperties: Observable<IProperty[]>;
 
   constructor(private _store: Store<IAppState>) {
+    this.resultProperties = this._store.select(selectResultProperties);
     this.savedProperties = this._store.select(selectSavedProperties);
   }
 

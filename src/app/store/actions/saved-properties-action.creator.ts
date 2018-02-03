@@ -15,3 +15,10 @@ export function removeSavedPropertyAction(propertyId: number): IAction {
     payload: propertyId
   };
 }
+
+export function loadSavedPropertiesAction(properties: IProperty[]): IAction {
+  return {
+    type: SAVED_PROPERTIES_ACTIONS.LOAD,
+    payload: properties
+  };
+}

@@ -18,6 +18,9 @@ export function savedPropertyReducer(state: IProperty[] = [], action: IAction) {
 
       return state.filter(p => p.id !== action.payload);
 
+    case SAVED_PROPERTIES_ACTIONS.LOAD:
+      return action.payload;
+
     default:
       return state;
   }

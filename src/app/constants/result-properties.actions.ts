@@ -1,0 +1,4 @@
+
+export const RESULT_PROPERTIES_ACTIONS = {
+  LOAD: '[RESULT_PROPERTIES] LOAD'
+};
