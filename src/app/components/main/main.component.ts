@@ -22,4 +22,12 @@ export class MainComponent implements OnInit {
     this._businessFacade.loadData();
   }
 
+  saveProperty(property: IProperty): void {
+    this._businessFacade.saveProperty(property);
+  }
+
+  removeProperty(propertyId: number): void {
+    this._businessFacade.removeSavedProperty(propertyId);
+  }
+
 }

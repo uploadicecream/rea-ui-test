@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IProperty} from '../../interfaces/property.interface';
 
 @Component({
@@ -9,6 +9,9 @@ import {IProperty} from '../../interfaces/property.interface';
 export class PropertyListComponent implements OnInit {
 
   @Input() properties: IProperty[];
+
+  @Output() propertySaved: EventEmitter<IProperty> = new EventEmitter<IProperty>();
+  @Output() propertyRemoved: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 

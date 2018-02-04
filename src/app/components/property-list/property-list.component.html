@@ -1,5 +1,7 @@
 <div class="property-list">
   <div class="property-list-item" *ngFor="let property of properties">
-    <app-property [property]="property"></app-property>
+    <app-property [property]="property"
+                  (propertySaved)="propertySaved.emit($event)"
+                  (propertyRemoved)="propertyRemoved.emit($event)"></app-property>
   </div>
 </div>
