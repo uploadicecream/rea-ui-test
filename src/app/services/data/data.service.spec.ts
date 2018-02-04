@@ -38,5 +38,6 @@ describe('DataService', () => {
     _service.loadData();
     expect(_resultProperties.length).toBe(3);
     expect(_savedProperties.length).toBe(1);
+    // TODO: could validate all properties are as expected but just checking that right amount of properties load is good enough for now
   });
 });

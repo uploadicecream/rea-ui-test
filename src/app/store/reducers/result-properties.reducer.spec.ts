@@ -1,6 +1,7 @@
 import {IAction} from '../../interfaces/action.interface';
 import {resultPropertyReducer} from './result-properties.reducer';
 import {loadResultPropertiesAction} from '../actions/result-properties-action.creator';
+import {createProperty} from '../../spec/property.helpers.spec';
 
 describe('Result Property Reducer', () => {
 
@@ -15,7 +16,7 @@ describe('Result Property Reducer', () => {
 
   it('should return action instance when properties loaded', () => {
     const initialState = [];
-    const properties = [{ id: 1 }, { id: 2 }];
+    const properties = [createProperty(1), createProperty(2)];
     const action = loadResultPropertiesAction(properties);
 
     const result = resultPropertyReducer(initialState, action);

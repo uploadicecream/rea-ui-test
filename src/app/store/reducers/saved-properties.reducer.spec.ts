@@ -2,6 +2,7 @@ import {savedPropertyReducer} from './saved-properties.reducer';
 import {IAction} from '../../interfaces/action.interface';
 import {IProperty} from '../../interfaces/property.interface';
 import {loadSavedPropertiesAction, removeSavedPropertyAction, savePropertyAction} from '../actions/saved-properties-action.creator';
+import {createProperty} from '../../spec/property.helpers.spec';
 
 describe('Saved Property Reducer', () => {
 
@@ -17,7 +18,7 @@ describe('Saved Property Reducer', () => {
 
   it('should return new state instance with property included when saving a property', () => {
     const initialState = [];
-    const propertyToSave = <IProperty>{ id: 1 };
+    const propertyToSave = createProperty(1);
     const action = savePropertyAction(propertyToSave);
 
     const result = savedPropertyReducer(initialState, action);
@@ -28,9 +29,9 @@ describe('Saved Property Reducer', () => {
   });
 
   it('should not save property with the same id twice', () => {
-    const existingProperty = <IProperty>{ id: 1 };
+    const existingProperty = createProperty(1);
     const initialState = [existingProperty];
-    const propertyToSave = <IProperty>{ id: 1 };
+    const propertyToSave = createProperty(1);
     const action = savePropertyAction(propertyToSave);
 
     const result = savedPropertyReducer(initialState, action);
@@ -42,7 +43,7 @@ describe('Saved Property Reducer', () => {
   });
 
   it('should remove an existing saved property and return new instance (only one saved property)', () => {
-    const existingProperty = <IProperty>{ id: 1 };
+    const existingProperty = createProperty(1);
     const initialState = [existingProperty];
     const action = removeSavedPropertyAction(existingProperty.id);
 
@@ -53,8 +54,8 @@ describe('Saved Property Reducer', () => {
   });
 
   it('should remove an existing saved property and return new instance (multiple saved properties)', () => {
-    const existingProperty = <IProperty>{ id: 1 };
-    const initialState = [existingProperty, {id: 2}, {id: 3}];
+    const existingProperty = createProperty(1);
+    const initialState = [existingProperty, createProperty(2), createProperty(3)];
     const action = removeSavedPropertyAction(existingProperty.id);
 
     const result = savedPropertyReducer(initialState, action);
@@ -66,7 +67,7 @@ describe('Saved Property Reducer', () => {
   });
 
   it('should return initial state if removing a property that isnt saved', () => {
-    const existingProperty = <IProperty>{ id: 1 };
+    const existingProperty = createProperty(1);
     const initialState = [existingProperty];
     const action = removeSavedPropertyAction(4);
 
@@ -78,7 +79,7 @@ describe('Saved Property Reducer', () => {
 
   it('should load saved properties', () => {
     const initialState = [];
-    const properties = [{id: 1}, {id: 2}];
+    const properties = [createProperty(1), createProperty(2)];
     const action = loadSavedPropertiesAction(properties);
 
     const result = savedPropertyReducer(initialState, action);
