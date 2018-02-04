@@ -1,19 +1,19 @@
 <div class="property">
   <div class="property-header" [style.backgroundColor]="property.agency.brandingColors.primary">
-    <img [src]="property.agency.logo" alt="agency logo">
+    <img [src]="property.agency.logo" class="property-logo-image" alt="agency logo">
   </div>
   <div class="property-body">
-    <img [src]="property.mainImage" alt="property image">
+    <img [src]="property.mainImage" class="property-main-image" alt="property image">
   </div>
   <div class="property-footer">
     <p class="property-footer-price">{{property.price}}</p>
   </div>
   <div class="property-action-group">
     <div *ngIf="allowSave" class="property-action-item">
-      <button type="submit" (click)="onAddPropertyClick()">Add Property</button>
+      <button type="submit" (click)="onAddPropertyClick()" class="button button--add">Add Property</button>
     </div>
     <div *ngIf="allowRemove" class="property-action-item">
-      <button type="submit" (click)="onRemovePropertyClick()">Remove Property</button>
+      <button type="submit" (click)="onRemovePropertyClick()" class="button button--remove">Remove Property</button>
     </div>
   </div>
 </div>

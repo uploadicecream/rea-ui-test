@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import "reset";
+
+$color--border: #000;
+
+body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+
+  .main-container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .button {
+
+    background: #FFF;
+    border-radius: 28px;
+    border: 2px #CCC solid;
+    color: #000;
+    padding: 5px 8px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.button--add {
+      color: #008000;
+      border-color: #008000;
+    }
+
+    &.button--remove {
+      color: #8B0000;
+      border-color: #8B0000;
+    }
+  }
+}
+
