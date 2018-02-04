@@ -3,11 +3,13 @@
     <div class="property-list-group-item">
       <h3 class="property-list-group-heading">Results</h3>
       <app-property-list [properties]="resultProperties | async"
+                         [allowSave]="true"
                          (propertySaved)="saveProperty($event)"></app-property-list>
     </div>
     <div class="property-list-group-item">
       <h3 class="property-list-group-heading">Saved Properties</h3>
       <app-property-list [properties]="savedProperties | async"
+                         [allowRemove]="true"
                          (propertyRemoved)="removeProperty($event)"></app-property-list>
     </div>
   </div>

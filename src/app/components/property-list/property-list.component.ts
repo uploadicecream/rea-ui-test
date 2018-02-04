@@ -9,6 +9,8 @@ import {IProperty} from '../../interfaces/property.interface';
 export class PropertyListComponent implements OnInit {
 
   @Input() properties: IProperty[];
+  @Input() allowSave = false;
+  @Input() allowRemove = false;
 
   @Output() propertySaved: EventEmitter<IProperty> = new EventEmitter<IProperty>();
   @Output() propertyRemoved: EventEmitter<number> = new EventEmitter<number>();
