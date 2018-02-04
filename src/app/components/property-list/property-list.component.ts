@@ -8,6 +8,7 @@ import {IProperty} from '../../interfaces/property.interface';
 })
 export class PropertyListComponent implements OnInit {
 
+  @Input() heading = '';
   @Input() properties: IProperty[];
   @Input() allowSave = false;
   @Input() allowRemove = false;

@@ -2,8 +2,10 @@
 
 .property {
 
+  $property-border: 1px solid $color--border;
+
   box-sizing: border-box;
-  border: 1px solid $color--border;
+  border: $property-border;
   position: relative;
 
   .property-header {
@@ -14,8 +16,8 @@
   .property-body {
     .property-main-image {
       width: 100%;
-      border-top: 1px solid $color--border;
-      border-bottom: 1px solid $color--border;
+      border-top: $property-border;
+      border-bottom: $property-border;
     }
   }
 
@@ -25,21 +27,15 @@
 
   &:hover {
     .property-action-group {
-      display: flex;
+      opacity: 1; // using opacity for animation
     }
   }
 
   .property-action-group {
     position: absolute;
-    display: none;
-    top: 0;
+    opacity: 0; // using opacity for animation
+    bottom: 50px;
     width: 100%;
-    height: 100%;
-    align-items: center;
-    flex-direction: row;
-
-    .property-action-item {
-      flex-basis: 100%;
-    }
+    transition: opacity 300ms linear;
   }
 }

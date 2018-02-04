@@ -1,4 +1,5 @@
 <div class="property-list">
+  <h3 class="property-list-heading">{{heading}}</h3>
   <div class="property-list-item" *ngFor="let property of properties">
     <app-property [property]="property"
                   [allowSave]="allowSave"

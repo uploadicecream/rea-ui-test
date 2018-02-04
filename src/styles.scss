@@ -2,6 +2,8 @@
 @import "reset";
 
 $color--border: #000;
+$color--add: #008000;
+$color--remove: #8B0000;
 
 body {
   font-family: Tahoma, Verdana, Segoe, sans-serif;
@@ -27,13 +29,13 @@ body {
     }
 
     &.button--add {
-      color: #008000;
-      border-color: #008000;
+      color: $color--add;
+      border-color: $color--add;
     }
 
     &.button--remove {
-      color: #8B0000;
-      border-color: #8B0000;
+      color: $color--remove;
+      border-color: $color--remove;
     }
   }
 }
