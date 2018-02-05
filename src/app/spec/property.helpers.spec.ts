@@ -4,9 +4,9 @@ export function createProperty(id: number): IProperty {
   return {
     id,
     price: '$100,000',
-    mainImage: 'not-an-image.png',
+    mainImage: '',
     agency: {
-      logo: 'not-a-logo.png',
+      logo: '',
       brandingColors: {
         primary: '#000000'
       }
