@@ -1,15 +1,19 @@
 import {IProperty} from '../interfaces/property.interface';
 
 export function createProperty(id: number): IProperty {
+  return createPropertyWithOptions(id, '$100,000', '', '', '#000');
+}
+
+export function createPropertyWithOptions(id: number, price: string, mainImage: string, logo: string, primaryColor: string) {
   return {
     id,
-    price: '$100,000',
-    mainImage: '',
+    price,
+    mainImage,
     agency: {
-      logo: '',
+      logo,
       brandingColors: {
-        primary: '#000000'
+        primary: primaryColor
       }
     }
-  };
+  }
 }
