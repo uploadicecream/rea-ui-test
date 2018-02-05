@@ -8,7 +8,9 @@ Extract files to folder and from folder root run `npm install`
 
 ## Running unit tests
 
-Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io) using Headless Chrome. *Note, this requires Chrome v59 or higher.*
+
+If using Chrome less than v59, run `npm run test-browser` to run in a Chrome browser.
 
 ## Development server
 
